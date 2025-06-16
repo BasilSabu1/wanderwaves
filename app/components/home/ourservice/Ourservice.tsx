@@ -99,9 +99,9 @@ const TravelServicesComponent: React.FC = () => {
     );
   };
 
-  const goToReview = (index: number) => {
-    setCurrentReview(index);
-  };
+//   const goToReview = (index: number) => {
+//     setCurrentReview(index);
+//   };
 
   const renderStars = (rating: number) => {
     return [...Array(5)].map((_, i) => (
@@ -145,7 +145,7 @@ const TravelServicesComponent: React.FC = () => {
         {/* Traveler's Experiences Section */}
         <div className="text-center py-12 bg-gray-50 ">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
-            Traveler's Experiences
+            Traveler&apos;s Experiences
           </h2>
           <p className="text-base sm:text-lg text-gray-500 mb-8 sm:mb-12 max-w-2xl mx-auto">
             Discover the incredible stories and feedback from our travelers who

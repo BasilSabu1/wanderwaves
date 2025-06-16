@@ -239,10 +239,10 @@ const RecentTripsPage: React.FC = () => {
 
                 {/* Destination Cards */}
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-                  {getVisibleDestinations().map((destination, index) => {
+                  {getVisibleDestinations().map((destination) => {
                     const isFlipped =
                       flippedCards[`destination-${destination.id}`];
-                    const isMiddleCard = index === 1 || index === 2;
+                    // const isMiddleCard = index === 1 || index === 2;
 
                     return (
                       <div
