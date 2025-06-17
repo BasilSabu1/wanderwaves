@@ -40,51 +40,46 @@ const PopularDestinations = () => {
       {/* Popular Destinations Section */}
       <div className="bg-gray-50 py-12 px-4 md:px-8 lg:px-16">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-            {/* Left Side - Large Image with World Map */}
-            <div className="lg:w-1/2 relative">
-              <div className="relative h-[400px] md:h-[500px] lg:h-[600px] bg-white rounded-2xl shadow-lg overflow-hidden">
-                {/* World Map Background */}
-                <div className="absolute inset-0 p-8">
-                  {/* World Map Image */}
-                  <div className="relative w-full h-full">
-                    <Image
-                      src="/populardestination/worldmap.png" // Replace with your actual world map image path
-                      alt="World Map"
-                      fill
-                      className="object-contain opacity-50"
-                    />
-                  </div>
+          {/* Centered Title */}
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+              Our Popular Destinations
+            </h2>
+          </div>
 
-                  {/* Location Pins */}
-                  <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
-                  <div className="absolute top-2/3 right-1/3 w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
-                  <div className="absolute bottom-1/4 left-1/4 w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 min-h-[500px]">
+            {/* Left Side - World Map without background */}
+            <div className="lg:w-1/2 relative">
+              <div className="relative h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
+                {/* World Map Background - Full Coverage */}
+                <div className="absolute inset-0">
+                  <Image
+                    src="/populardestination/worldmap.png"
+                    alt="World Map"
+                    fill
+                    className="object-cover opacity-60"
+                  />
                 </div>
+
+                {/* Location Pins */}
+                <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-blue-500 rounded-full animate-pulse shadow-lg"></div>
+                <div className="absolute top-2/3 right-1/3 w-3 h-3 bg-blue-500 rounded-full animate-pulse shadow-lg"></div>
+                <div className="absolute bottom-1/4 left-1/4 w-3 h-3 bg-blue-500 rounded-full animate-pulse shadow-lg"></div>
               </div>
             </div>
 
-            {/* Right Side - Title and Destination Cards */}
+            {/* Right Side - Destination Cards */}
             <div className="lg:w-1/2">
-              {/* Title */}
-              <div className="mb-8">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                  Our Popular Destinations
-                </h2>
-              </div>
-
-              {/* Destination Cards */}
-              <div className="space-y-4">
-                {destinations.map((destination, index) => (
+              {/* Destination Cards - All Same Size */}
+              <div className="space-y-6 h-full flex flex-col justify-center">
+                {destinations.map((destination) => (
                   <div
                     key={destination.id}
-                    className={`bg-white rounded-xl shadow-md p-4 flex items-center gap-4 hover:shadow-lg transition-shadow duration-300 ${
-                      index === 1 ? "ml-8" : index === 2 ? "ml-4" : ""
-                    }`}
+                    className="bg-white rounded-xl shadow-md p-6 flex items-center gap-6 hover:shadow-lg transition-all duration-300 min-h-[100px]"
                   >
                     {/* Destination Image */}
                     <div className="flex-shrink-0">
-                      <div className="w-20 h-16 md:w-24 md:h-18 lg:w-28 lg:h-20 relative rounded-lg overflow-hidden">
+                      <div className="w-20 h-16 md:w-24 md:h-18 lg:w-28 lg:h-20 relative rounded-lg overflow-hidden shadow-sm">
                         <Image
                           src={destination.image}
                           alt={destination.name}
@@ -96,7 +91,7 @@ const PopularDestinations = () => {
 
                     {/* Destination Info */}
                     <div className="flex-grow">
-                      <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-1">
+                      <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">
                         {destination.name}
                       </h3>
                       <p className="text-sm md:text-base text-gray-600">

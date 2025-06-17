@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const WeAlwaysTry: React.FC = () => {
   const [stats, setStats] = useState({
@@ -10,6 +10,8 @@ const WeAlwaysTry: React.FC = () => {
     history: 0,
   });
 
+  const sectionRef = useRef(null);
+
   useEffect(() => {
     const targetStats = {
       years: 15,
@@ -18,32 +20,57 @@ const WeAlwaysTry: React.FC = () => {
       history: 2000,
     };
 
-    const duration = 2000; // Animation duration in ms
-    const startTime = Date.now();
-
     const animate = () => {
-      const elapsed = Date.now() - startTime;
-      const progress = Math.min(elapsed / duration, 1);
+      const duration = 2000; // Animation duration in ms
+      const startTime = Date.now();
 
-      setStats({
-        years: Math.floor(progress * targetStats.years),
-        travelers: Math.floor(progress * targetStats.travelers),
-        places: Math.floor(progress * targetStats.places),
-        history: Math.floor(progress * targetStats.history),
-      });
+      const animateNumbers = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
 
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
+        setStats({
+          years: Math.floor(progress * targetStats.years),
+          travelers: Math.floor(progress * targetStats.travelers),
+          places: Math.floor(progress * targetStats.places),
+          history: Math.floor(progress * targetStats.history),
+        });
+
+        if (progress < 1) {
+          requestAnimationFrame(animateNumbers);
+        }
+      };
+
+      animateNumbers();
     };
 
-    animate();
-  }, []);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animate();
+            observer.unobserve(entry.target); // Stop observing after animation starts
+          }
+        });
+      },
+      { threshold: 0.3 } // Trigger when 30% of the section is visible
+    );
 
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+  
   return (
     <div className="relative">
       {/* Background Image Section */}
       <div
+        ref={sectionRef}
         className="relative bg-cover bg-center py-16 md:py-24"
         style={{
           backgroundImage:
