@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
           {["Home", "Explore", "Travel", "Blog", "Contact"].map((link) => (
             <Link
               key={link}
-              href={`/${link.toLowerCase()}`}
+              href={`#${link.toLowerCase()}`}
               className="text-gray-700 hover:text-blue-600 text-sm font-medium transition-colors duration-200"
             >
               {link}

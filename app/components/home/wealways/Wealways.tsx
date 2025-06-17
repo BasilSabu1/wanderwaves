@@ -192,7 +192,7 @@ const WeAlwaysTry: React.FC = () => {
       </div>
 
       {/* Do You Need Help Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 " id="contact">
         <div className="bg-gradient-to-r from-blue-600 to-cyan-400 rounded-lg shadow-lg p-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-white mb-4 md:mb-0">
             <h3 className="text-xl md:text-2xl font-semibold mb-2">

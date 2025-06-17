@@ -175,7 +175,7 @@ const RecentTripsPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white" id="blog">
       {/* Recent Trips Section */}
       <section className="py-16 px-4 md:px-8 lg:px-16">
         <div className="max-w-7xl mx-auto">
@@ -217,7 +217,7 @@ const RecentTripsPage: React.FC = () => {
       </section>
 
       {/* Popular Destinations Section */}
-      <section className="py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-r from-cyan-400 via-blue-500 to-blue-600">
+      <section className="py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-r from-cyan-400 via-blue-500 to-blue-600" id="explore">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
             {/* Left Side - Carousel with Cards */}

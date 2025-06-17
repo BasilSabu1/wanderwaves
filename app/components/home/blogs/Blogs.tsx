@@ -172,7 +172,7 @@ export default function TravelCardsApp() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-4 lg:py-8 px-2 sm:px-4">
+    <div   id="travel" className="min-h-screen bg-gray-100 py-4 lg:py-8 px-2 sm:px-4">
       <div className="container mx-auto">
         {/* Travel Cards */}
         <div className="space-y-6 lg:space-y-8">

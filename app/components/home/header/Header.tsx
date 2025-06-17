@@ -8,11 +8,11 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { name: "Home", href: "/" },
-    { name: "Explore", href: "/explore" },
-    { name: "Travel", href: "/travel" },
-    { name: "Blog", href: "/blog" },
-    { name: "Contact ", href: "/contact" },
+    { name: "Home", href: "#home" },
+    { name: "Explore", href: "#explore" },
+    { name: "Travel", href: "#travel" },
+    { name: "Blog", href: "#blog" },
+    { name: "Contact ", href: "#contact" },
   ];
 
   return (
@@ -21,14 +21,17 @@ const Header: React.FC = () => {
         <div className="bg-white shadow-sm rounded-lg">
           <div className="flex justify-between items-center h-20 px-6 sm:px-8">
             {/* Logo Section - moved more to the right */}
-            <div className="flex items-center space-x-2  lg:ml-16">
+            <div className="flex items-center space-x-2 lg:ml-16">
               <div className="flex items-center">
-                <Image
-                  src="/headerlogo.png"
-                  alt="Wander Wave Logo"
-                  width={260}
-                  height={50}  
-                />
+                <Link href="/">
+                  <Image
+                    src="/headerlogo.png"
+                    alt="Wander Wave Logo"
+                    width={260}
+                    height={50}
+                    className="cursor-pointer"
+                  />
+                </Link>
               </div>
             </div>
 
@@ -53,7 +56,7 @@ const Header: React.FC = () => {
                 className="text-gray-700 hover:text-blue-500 focus:outline-none"
               >
                 <svg
-                  className="w-8 h-8"  
+                  className="w-8 h-8"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -77,7 +80,7 @@ const Header: React.FC = () => {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="text-gray-700 hover:text-blue-500 block px-4 py-3 text-lg font-medium transition-colors duration-200" 
+                    className="text-gray-700 hover:text-blue-500 block px-4 py-3 text-lg font-medium transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}

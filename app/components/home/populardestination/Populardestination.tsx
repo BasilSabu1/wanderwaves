@@ -24,7 +24,7 @@ const PopularDestinations = () => {
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full" >
       {/* Hero Image Section */}
       <div className="w-full aspect-[16/9] sm:aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/9] relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b  z-10"></div>
@@ -39,7 +39,7 @@ const PopularDestinations = () => {
       </div>
 
       {/* Popular Destinations Section */}
-      <div className="bg-gray-50 py-12 px-4 md:px-8 lg:px-16">
+      <div className="bg-gray-50 py-12 px-4 md:px-8 lg:px-16" >
         <div className="max-w-7xl mx-auto">
           {/* Centered Title */}
           <div className="text-center mb-8">
