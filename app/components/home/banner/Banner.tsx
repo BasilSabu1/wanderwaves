@@ -13,7 +13,7 @@ const BannerSection = () => {
     },
     { name: "Kochi", image: "/bannerlogos/kochi.png", alt: "Kochi" },
     {
-      name: "Thiruvananthapuram",
+      name: "Thrivandrum",
       image: "/bannerlogos/thiruvananthapuram.png",
       alt: "Thiruvananthapuram",
     },

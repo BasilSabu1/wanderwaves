@@ -26,13 +26,14 @@ const PopularDestinations = () => {
   return (
     <div className="w-full">
       {/* Hero Image Section */}
-      <div className="w-full h-[400px] md:h-[500px] lg:h-[600px] relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-400/20 to-blue-600/40"></div>
+      <div className="w-full aspect-[16/9] sm:aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/9] relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b  z-10"></div>
         <Image
           src="/populardestinationsction.png"
           alt="Travel destination scenic view"
           fill
-          className="object-cover"
+          className="object-cover object-center"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
           priority
         />
       </div>
@@ -75,7 +76,7 @@ const PopularDestinations = () => {
                 {destinations.map((destination) => (
                   <div
                     key={destination.id}
-                    className="bg-white rounded-xl shadow-md p-6 flex items-center gap-6 hover:shadow-lg transition-all duration-300 min-h-[100px]"
+                    className=" p-6 flex items-center gap-6 hover:shadow-lg transition-all duration-300 min-h-[100px]"
                   >
                     {/* Destination Image */}
                     <div className="flex-shrink-0">

@@ -65,7 +65,7 @@ const WeAlwaysTry: React.FC = () => {
       }
     };
   }, []);
-  
+
   return (
     <div className="relative">
       {/* Background Image Section */}
@@ -204,7 +204,7 @@ const WeAlwaysTry: React.FC = () => {
               prepare a commercial offer.
             </p>
           </div>
-          <button className="bg-white text-blue-600 font-semibold py-2 px-6 rounded-full flex items-center hover:bg-gray-100 transition">
+          {/* <button className="bg-white text-blue-600 font-semibold py-2 px-6 rounded-full flex items-center hover:bg-gray-100 transition">
             Get consultation
             <svg
               className="w-5 h-5 ml-2"
@@ -219,7 +219,7 @@ const WeAlwaysTry: React.FC = () => {
                 d="M9 5l7 7-7 7"
               />
             </svg>
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

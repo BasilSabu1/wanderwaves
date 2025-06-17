@@ -118,19 +118,23 @@ const TravelServicesComponent = () => {
                   service.bgColor === "bg-gray-100"
                     ? "text-black"
                     : "text-white"
-                } rounded-lg p-6 shadow-md flex flex-col items-start justify-center h-48 sm:h-52 transition-transform transform hover:scale-105`}
+                } rounded-lg p-6 shadow-md flex flex-col items-start justify-start h-48 sm:h-52 transition-transform transform hover:scale-105 text-left`}
               >
-                <div className="mb-4">
-                  <img
+                <div className="mb-4 flex-shrink-0 ">
+                  <Image
                     src={service.image}
                     alt={service.title}
-                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg object-cover"
+                    width={64}
+                    height={64}
+                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg object-cover filter-none"
+                    style={{ imageRendering: "crisp-edges" }}
+                    loading="lazy"
                   />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 text-left">
                   {service.title}
                 </h3>
-                <p className="text-sm sm:text-base leading-relaxed">
+                <p className="text-sm sm:text-base leading-relaxed text-left">
                   {service.description}
                 </p>
               </div>
@@ -139,24 +143,23 @@ const TravelServicesComponent = () => {
         </div>
 
         {/* Traveler's Experiences Section */}
-        <div className="text-center py-12 ">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
-            Traveler&apos;s Experiences
-          </h2>
-          <p className="text-base sm:text-lg text-gray-500 mb-8 sm:mb-12 max-w-2xl mx-auto">
-            Discover the incredible stories and feedback from our travelers who
-            explored the world with us.
-          </p>
-
+        <div className="text-left py-12 px-4 sm:px-8 lg:px-12">
+  <div className="mb-8 sm:mb-12">
+    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight relative pb-2">
+      Traveler&apos;s Experiences
+      <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-gray-900 mt-1"></span>
+    </h2>
+    <p className="text-base sm:text-lg text-gray-500 mt-6 max-w-2xl">
+      Here some awesome feedback from our travelers
+    </p>
+  </div>
           <div className="relative px-4 sm:px-8 lg:px-12">
             {/* Carousel Container with proper spacing for avatars */}
-            <div className=" mt-9 mb-4 " >
+            <div className=" mt-16 mb-4 ">
               <div
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${currentReview * 100}%)` }}
               >
-
-
                 {Array.from({ length: Math.ceil(reviews.length / 3) }).map(
                   (_, groupIndex) => (
                     <div
@@ -169,7 +172,7 @@ const TravelServicesComponent = () => {
                           .map((review) => (
                             <div
                               key={review.id}
-                              className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow relative h-48 sm:h-52 mt-6 sm:mt-8 ml-6 sm:ml-8"
+                              className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow relative h-56 sm:h-64 mt-6 sm:mt-8 ml-6 sm:ml-8"
                             >
                               {/* Avatar positioned at top-left, with proper spacing */}
                               <div className="absolute -top-6 sm:-top-8 -left-6 sm:-left-8 z-10">
@@ -185,7 +188,7 @@ const TravelServicesComponent = () => {
                               </div>
 
                               {/* Card content with proper padding */}
-                              <div className="p-6 pt-8 h-full flex flex-col justify-between">
+                              <div className="p-6 pt-12 pb-6 h-full flex flex-col justify-between">
                                 <div className="flex-1">
                                   <p className="text-gray-600 text-sm sm:text-base leading-relaxed text-left mb-4 overflow-hidden">
                                     {review.review.length > 100

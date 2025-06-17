@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+// import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface TripCard {
   id: number;
@@ -31,6 +31,9 @@ const RecentTripsPage: React.FC = () => {
     {}
   );
 
+
+  console.log(setCurrentSlide);
+  
   const recentTrips: TripCard[] = [
     {
       id: 1,
@@ -102,7 +105,7 @@ const RecentTripsPage: React.FC = () => {
     {
       id: 1,
       title: "Mountain Adventure",
-      image: "/populardestination/popular1.png",
+      image: "/populardestination/popularimages1.png",
       backContent: {
         title: "Mountain Escape",
         description:
@@ -113,7 +116,7 @@ const RecentTripsPage: React.FC = () => {
     {
       id: 2,
       title: "Desert Safari",
-      image: "/populardestination/popular2.png",
+      image: "/populardestination/popularimages2.png",
       backContent: {
         title: "Desert Experience",
         description: "Explore vast desert landscapes and traditional culture.",
@@ -128,7 +131,7 @@ const RecentTripsPage: React.FC = () => {
     {
       id: 3,
       title: "Historic Castle",
-      image: "/populardestination/popular3.png",
+      image: "/populardestination/popularimages3.png",
       backContent: {
         title: "Historic Journey",
         description: "Step back in time and explore ancient architecture.",
@@ -138,7 +141,7 @@ const RecentTripsPage: React.FC = () => {
     {
       id: 4,
       title: "Lake Paradise",
-      image: "/populardestination/popular4.png",
+      image: "/populardestination/popularimages4.png",
       backContent: {
         title: "Serene Lakes",
         description: "Enjoy peaceful moments by crystal clear mountain lakes.",
@@ -155,17 +158,17 @@ const RecentTripsPage: React.FC = () => {
     }));
   };
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % (popularDestinations.length - 3));
-  };
+  // const nextSlide = () => {
+  //   setCurrentSlide((prev) => (prev + 1) % (popularDestinations.length - 3));
+  // };
 
-  const prevSlide = () => {
-    setCurrentSlide(
-      (prev) =>
-        (prev - 1 + (popularDestinations.length - 3)) %
-        (popularDestinations.length - 3)
-    );
-  };
+  // const prevSlide = () => {
+  //   setCurrentSlide(
+  //     (prev) =>
+  //       (prev - 1 + (popularDestinations.length - 3)) %
+  //       (popularDestinations.length - 3)
+  //   );
+  // };
 
   const getVisibleDestinations = () => {
     return popularDestinations.slice(currentSlide, currentSlide + 4);
@@ -221,7 +224,7 @@ const RecentTripsPage: React.FC = () => {
             <div className="w-full lg:w-2/3 relative">
               <div className="relative px-8 md:px-12">
                 {/* Navigation Arrows - Positioned outside the card container */}
-                <button
+                {/* <button
                   onClick={prevSlide}
                   className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-white/95 hover:bg-white rounded-full flex items-center justify-center text-gray-800 shadow-xl transition-all duration-300 hover:scale-110 backdrop-blur-sm"
                   disabled={currentSlide === 0}
@@ -235,7 +238,7 @@ const RecentTripsPage: React.FC = () => {
                   disabled={currentSlide >= popularDestinations.length - 4}
                 >
                   <ChevronRight size={20} className="md:w-6 md:h-6" />
-                </button>
+                </button> */}
 
                 {/* Destination Cards */}
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">

@@ -21,12 +21,12 @@ const Header: React.FC = () => {
         <div className="bg-white shadow-sm rounded-lg">
           <div className="flex justify-between items-center h-20 px-6 sm:px-8">
             {/* Logo Section - moved more to the right */}
-            <div className="flex items-center space-x-2 ml-12 lg:ml-16">
+            <div className="flex items-center space-x-2  lg:ml-16">
               <div className="flex items-center">
                 <Image
                   src="/headerlogo.png"
                   alt="Wander Wave Logo"
-                  width={180}
+                  width={260}
                   height={50}  
                 />
               </div>

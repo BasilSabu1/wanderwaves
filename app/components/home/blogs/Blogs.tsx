@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArrowRight } from "lucide-react";
+// import { ArrowRight } from "lucide-react";
 
 // Types
 interface TravelDestination {
@@ -32,27 +32,27 @@ const travelData: TravelDestination[] = [
   },
   {
     id: "2",
-    title: "Red Fort Delhi",
+     title: "Taj Mahal",
     description:
-      "Experience the grandeur of Mughal architecture at the iconic Red Fort in Delhi. A magnificent fortress that stands as a testament to India's rich history and cultural heritage.",
-    fullDescription: `The Red Fort, known locally as Lal Qila, is a historic fortified palace...`,
-    distance: "180 Km",
-    duration: "1 Day 2 Nights",
+      "Lorem ipsum dolor sit amet consectetur. Dignissim leo sit amet aliquam ante. Tellus pulvinar in at tortor. Sed vestibulum pretium nulla vulputate. Nisi donec praesent sollicitudin mauris tristique dolor eget. Felis elementum a pharetra est et non nisi pulvinar. Nunc viverra egestas bibendum facilisis ac. Dolor enim talis ut faucibus vitae. Pretium nunc consequat nec magna nunc dignissim utilices non blandit. Quis proin felis bibendum egestas praesent sit amet vestibulum.",
+    fullDescription: `The Taj Mahal, one of the Seven Wonders of the World...`,
+    distance: "250 Km",
+    duration: "2 Days 3 Nights",
     mainImage: "/blogs/blog.png",
     photos: ["/blogs/photo1.png", "/blogs/photo2.png", "/blogs/photo3.png"],
-    location: "Old Delhi, Delhi, India",
+    location: "Agra, Uttar Pradesh, India",
   },
   {
     id: "3",
-    title: "Kerala Backwaters",
+     title: "Taj Mahal",
     description:
-      "Discover the serene beauty of Kerala's backwaters, a network of canals, rivers and lakes that offer a peaceful escape into nature's paradise.",
-    fullDescription: `The Kerala Backwaters represent one of India's most enchanting natural wonders...`,
-    distance: "420 Km",
-    duration: "3 Days 4 Nights",
+      "Lorem ipsum dolor sit amet consectetur. Dignissim leo sit amet aliquam ante. Tellus pulvinar in at tortor. Sed vestibulum pretium nulla vulputate. Nisi donec praesent sollicitudin mauris tristique dolor eget. Felis elementum a pharetra est et non nisi pulvinar. Nunc viverra egestas bibendum facilisis ac. Dolor enim talis ut faucibus vitae. Pretium nunc consequat nec magna nunc dignissim utilices non blandit. Quis proin felis bibendum egestas praesent sit amet vestibulum.",
+    fullDescription: `The Taj Mahal, one of the Seven Wonders of the World...`,
+    distance: "250 Km",
+    duration: "2 Days 3 Nights",
     mainImage: "/blogs/blog.png",
     photos: ["/blogs/photo1.png", "/blogs/photo2.png", "/blogs/photo3.png"],
-    location: "Alleppey & Kumarakom, Kerala, India",
+    location: "Agra, Uttar Pradesh, India",
   },
 ];
 
@@ -62,7 +62,7 @@ interface TravelCardProps {
   onBookNow: (id: string) => void;
 }
 
-const TravelCard: React.FC<TravelCardProps> = ({ destination, onBookNow }) => {
+const TravelCard: React.FC<TravelCardProps> = ({ destination }) => {
   return (
     <div className="w-full max-w-7xl mx-auto mb-8">
       {/* Main container - responsive layout */}
@@ -109,13 +109,13 @@ const TravelCard: React.FC<TravelCardProps> = ({ destination, onBookNow }) => {
             <h2 className="text-2xl lg:text-3xl font-bold text-white leading-tight">
               {destination.title}
             </h2>
-            <button
+            {/* <button
               onClick={() => onBookNow(destination.id)}
               className="group flex items-center justify-center bg-white text-blue-600 px-4 py-2 rounded-lg text-sm font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 sm:ml-4 flex-shrink-0 w-full sm:w-auto"
             >
               Book Now
               <ArrowRight className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-            </button>
+            </button> */}
           </div>
 
           {/* Description */}
